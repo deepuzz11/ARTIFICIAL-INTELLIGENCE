@@ -3,25 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIA 1 - Search Algorithms</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>CIA 1 - Search Algorithms (C Programs)</title>
 </head>
 <body>
-    <h1>CIA 1 - Search Algorithms</h1>
-    <ul>
-        <li><a href="/get_file/1_british_museum_Search.c">British Museum</a></li>
-        <li><a href="/get_file/2_dfs.c">Depth First Search (DFS)</a></li>
-        <li><a href="/get_file/3_bfs.c">Breadth First Search (BFS)</a></li>
-        <li><a href="/get_file/4_hill_climbing.c">Hill Climbing</a></li>
-        <li><a href="/get_file/5_beam_search.c">Beam Search</a></li>
-        <li><a href="/get_file/6_oracle.c">Oracle Search</a></li>
-        <li><a href="/get_file/7_b&b.c">Branch & Bound</a></li>
-        <li><a href="/get_file/8_b&b_extended_list.c">Branch & Bound (Extended)</a></li>
-        <li><a href="/get_file/9_b&b_heuristics_estimates.c">Branch & Bound (Heuristics)</a></li>
-        <li><a href="/get_file/10_A_star.c">A* Search</a></li>
-        <li><a href="/get_file/11_A_O_star.c">AO* Search</a></li>
-        <li><a href="/get_file/12_best_first_search.c">Best First Search</a></li>
-    </ul>
+    <h1>CIA 1 - Search Algorithms (C Programs)</h1>
+
+    <form method="POST">
+        <label for="algorithm">Select Algorithm:</label>
+        <select name="algorithm" id="algorithm">
+            <option value="1_british_museum_S.c">British Museum</option>
+            <option value="2_dfs.c">Depth First Search (DFS)</option>
+            <option value="3_bfs.c">Breadth First Search (BFS)</option>
+            <option value="4_hill_climbing.c">Hill Climbing</option>
+            <option value="/get_file/1_british_museum_Search.c">British Museum</a></li>
+            <option value="/get_file/2_dfs.c">Depth First Search (DFS)</a></li>
+            <option value="/get_file/3_bfs.c">Breadth First Search (BFS)</a></li>
+            <option value="/get_file/4_hill_climbing.c">Hill Climbing</a></li>
+            <option value="/get_file/5_beam_search.c">Beam Search</a></li>
+            <option value="/get_file/6_oracle.c">Oracle Search</a></li>
+            <option value="/get_file/7_b&b.c">Branch & Bound</a></li>
+            <option value="/get_file/8_b&b_extended_list.c">Branch & Bound (Extended)</a></li>
+            <option value="/get_file/9_b&b_heuristics_estimates.c">Branch & Bound (Heuristics)</a></li>
+            <option value="/get_file/10_A_star.c">A* Search</a></li>
+            <option value="/get_file/11_A_O_star.c">AO* Search</a></li>
+            <option value="/get_file/12_best_first_search.c">Best First Search</a></li>    
+        </select>
+        <br><br>
+
+        <label for="user_input">Enter Input:</label>
+        <input type="text" name="user_input" id="user_input" required>
+        <br><br>
+
+        <button type="submit">Run Algorithm</button>
+    </form>
+
+    {% if output %}
+    <h2>Output:</h2>
+    <pre>{{ output }}</pre>
+    {% endif %}
+
     <a href="/">Back to Dashboard</a>
 </body>
 </html>
